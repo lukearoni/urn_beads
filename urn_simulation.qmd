@@ -11,4 +11,15 @@ Estimating proportions is a common goal in statistics, especially when dealing w
 ```{r}
 #| message: false
 library(tidyverse)
+library(tidymodels)
+library(broom)
+```
+
+latex_eq <- "$$\\log\\left(\\frac{\\rho}{1 - \\rho}\\right) = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_k X_k$$"
+
+$$\widehat{\text{logit}(P(\text{color} = \text{red}))} = -0.66$$
+
+```{r}
+#| cache: true
+$$\widehat{\text{logit}(P(\text{color} = \text{red}))} = -0.66$$
 ```

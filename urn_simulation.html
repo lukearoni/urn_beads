@@ -36,6 +36,35 @@ ul.task-list li input[type="checkbox"] {
 <link href="urn_simulation_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="urn_simulation_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -71,6 +100,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Estimating proportions is a common goal in statistics, especially when dealing with categorical outcomes. In an urn filled with 1000 beads, some are red while others are white, and in every other way they are identical except for a slight weight difference. A shovel is used to gather samples from the urn, and we use it to answer the question of what the proportion of red beads in the urn is. A potential weakness is that the assumption of stability might not hold, as the actual data sampled was taken 10 years prior, and corrosion has slightly affected the red beads more than the white ones.</p>
+<p>latex_eq &lt;- “<span class="math display">\[\\log\\left(\\frac{\\rho}{1 - \\rho}\\right) = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_k X_k\]</span>” <span class="math display">\[\widehat{\text{logit}(P(\text{color} = \text{red}))} = -0.66\]</span></p>
 
 </main>
 <!-- /main column -->
